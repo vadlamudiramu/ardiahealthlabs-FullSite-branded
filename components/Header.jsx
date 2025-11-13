@@ -1,28 +1,44 @@
+import Image from "next/image";
+
 export default function Header() {
   return (
     <header className="w-full border-b border-white/10 bg-slate-950/80 backdrop-blur sticky top-0 z-40">
-      <div className="max-w-6xl mx-auto px-4 sm:px-8 lg:px-16 py-4 flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <div className="h-8 w-8 rounded-xl bg-hero-gradient" />
-          <div>
-            <p className="text-sm font-semibold tracking-wide">
-              <span className="text-slate-50">Ardia</span>
-              <span className="text-sky-300">Health</span>
-            </p>
-            <p className="text-[10px] uppercase tracking-[0.2em] text-slate-400">
-              AI • Quantum • Care
+      <div className="max-w-6xl mx-auto px-4 sm:px-8 lg:px-16 py-3 flex items-center justify-between gap-4">
+        
+        {/* Logo + Wordmark */}
+        <a href="/" className="flex items-center gap-3">
+          
+          {/* Logo Image */}
+          <div className="relative h-10 w-10 sm:h-11 sm:w-11">
+            <Image
+              src="/ardia-logo.png"
+              alt="Ardia Health logo"
+              fill
+              sizes="44px"
+              className="object-contain"
+              priority
+            />
+          </div>
+
+          {/* ARDIA HEALTH + Tagline */}
+          <div className="flex flex-col leading-tight">
+            <div className="flex items-baseline gap-2">
+              <span className="text-sm sm:text-base font-semibold tracking-wide text-white">
+                ARDIA
+              </span>
+
+              <span className="text-xs sm:text-sm font-semibold tracking-wide bg-clip-text text-transparent bg-gradient-to-r from-sky-400 via-indigo-400 to-purple-400">
+                HEALTH
+              </span>
+            </div>
+
+            <p className="text-[10px] sm:text-[11px] mt-0.5 bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-cyan-300">
+              Human-centered care, amplified by AI and quantum intelligence.
             </p>
           </div>
-        </div>
-        <nav className="hidden md:flex gap-6 text-sm text-slate-300">
-          <a href="/" className="hover:text-sky-300">Home</a>
-          <a href="/solutions/flow" className="hover:text-sky-300">Flow AI</a>
-          <a href="/solutions/predict" className="hover:text-sky-300">Predict AI</a>
-          <a href="/demos/clinical-assistant" className="hover:text-sky-300">AI Demos</a>
-          <a href="/research" className="hover:text-sky-300">Research</a>
-          <a href="/blog" className="hover:text-sky-300">Blog</a>
-          <a href="/contact" className="hover:text-sky-300">Contact</a>
-        </nav>
+
+        </a>
+
       </div>
     </header>
   );
